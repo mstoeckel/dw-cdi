@@ -1,0 +1,17 @@
+dependencies {
+	compile project(':common') 
+	compile "org.jboss:jandex:$jandexVersion"
+    compile ("org.hibernate:hibernate-core:$hibernateVersion") { exclude module:'jandex' }
+    compile "io.dropwizard:dropwizard-db:$dropwizardVersion"
+}
+
+bintray {
+	pkg {
+        name = 'jpa-bundle'
+        desc = 'Dropwizard jpa bundle'
+        labels = ['dropwizard', 'jpa', 'bundle']
+        websiteUrl = 'https://github.com/mstoeckel/jpa-bundle'
+        issueTrackerUrl = 'https://github.com/mstoeckel/jpa-bundle/issues'
+        vcsUrl = 'https://github.com/mstoeckel/jpa-bundle.git'
+	}
+}

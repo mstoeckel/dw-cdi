@@ -1,0 +1,17 @@
+buildscript {
+    repositories {
+        jcenter()
+        dependencies {
+            classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        }
+    }
+}
+
+subprojects {
+    apply from: "$rootDir/gradle/base.gradle"
+    
+    dependencies {
+        compile "org.slf4j:slf4j-api:$slf4jVersion"
+        testCompile "org.junit.jupiter:junit-jupiter-api':$junitVersion"
+    }
+}
