@@ -1,5 +1,7 @@
 dependencies {
 	compile project(':common')
+	compile "io.dropwizard:dropwizard-core:$dropwizardVersion"
+	compile "org.jboss.weld.servlet:weld-servlet:$weldVersion"
     compile "org.glassfish.jersey.containers.glassfish:jersey-gf-cdi:$jerseyGfCdiVersion"
 }
 
@@ -8,8 +10,5 @@ bintray {
         name = 'cdi-bundle'
         desc = 'Dropwizard cdi bundle'
         labels = ['dropwizard', 'cdi', 'bundle']
-        websiteUrl = 'https://github.com/mstoeckel/cdi-bundle'
-        issueTrackerUrl = 'https://github.com/mstoeckel/cdi-bundle/issues'
-        vcsUrl = 'https://github.com/mstoeckel/cdi-bundle.git'
 	}
 }

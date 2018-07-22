@@ -1,8 +1,6 @@
 dependencies {
-	compile "io.dropwizard:dropwizard-core:$dropwizardVersion"
 	compile "org.jboss.weld.se:weld-se-core:$weldVersion"
-    compile "org.jboss.weld.servlet:weld-servlet:$weldVersion"
-    compile "org.eclipse.jetty:jetty-plus:$jettyVersion"
+	compile "org.eclipse.jetty:jetty-plus:$jettyVersion"
 }
 
 bintray {
@@ -10,8 +8,5 @@ bintray {
         name = 'bundle-common'
         desc = 'Dropwizard  bundle util'
         labels = ['dropwizard', 'util', 'bundle']
-        websiteUrl = 'https://github.com/mstoeckel/bundle-common'
-        issueTrackerUrl = 'https://github.com/mstoeckel/bundle-common/issues'
-        vcsUrl = 'https://github.com/mstoeckel/bundle-common.git'
 	}
 }

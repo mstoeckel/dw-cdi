@@ -1,5 +1,6 @@
 dependencies {
-	compile project(':common') 
+	compile project(':common')
+	compile "io.dropwizard:dropwizard-core:$dropwizardVersion" 
 	compile "org.jboss.narayana.jta:narayana-jta:$narayanaVersion"
     compile "org.jboss:jboss-transaction-spi:$jbossTxnSpiVersion"
 }
@@ -9,8 +10,5 @@ bintray {
         name = 'jta-bundle'
         desc = 'Dropwizard jta bundle'
         labels = ['dropwizard', 'jta', 'bundle']
-        websiteUrl = 'https://github.com/mstoeckel/jta-bundle'
-        issueTrackerUrl = 'https://github.com/mstoeckel/jta-bundle/issues'
-        vcsUrl = 'https://github.com/mstoeckel/jta-bundle.git'
 	}
 }

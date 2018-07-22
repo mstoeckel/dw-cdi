@@ -10,8 +10,5 @@ bintray {
         name = 'jpa-bundle'
         desc = 'Dropwizard jpa bundle'
         labels = ['dropwizard', 'jpa', 'bundle']
-        websiteUrl = 'https://github.com/mstoeckel/jpa-bundle'
-        issueTrackerUrl = 'https://github.com/mstoeckel/jpa-bundle/issues'
-        vcsUrl = 'https://github.com/mstoeckel/jpa-bundle.git'
 	}
 }
