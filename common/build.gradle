@@ -2,11 +2,3 @@ dependencies {
 	compile "org.jboss.weld.se:weld-se-core:$weldVersion"
 	compile "org.eclipse.jetty:jetty-plus:$jettyVersion"
 }
-
-bintray {
-	pkg {
-        name = 'bundle-common'
-        desc = 'Dropwizard  bundle util'
-        labels = ['dropwizard', 'util', 'bundle']
-	}
-}

@@ -9,17 +9,10 @@ buildscript {
 
 subprojects {
     apply from: "$rootDir/gradle/base.gradle"
+    apply from: "$rootDir/gradle/publish.gradle"
     
     dependencies {
         compile "org.slf4j:slf4j-api:$slf4jVersion"
         testCompile "org.junit.jupiter:junit-jupiter-api':$junitVersion"
-    }
-    
-    bintray {
-        pkg {
-            websiteUrl = 'https://github.com/mstoeckel/dw-cdi'
-            issueTrackerUrl = 'https://github.com/mstoeckel/dw-cdi/issues'
-            vcsUrl = 'https://github.com/mstoeckel/dw-cdi.git'
-        }
     }
 }

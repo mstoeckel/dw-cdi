@@ -4,11 +4,3 @@ dependencies {
     compile ("org.hibernate:hibernate-core:$hibernateVersion") { exclude module:'jandex' }
     compile "io.dropwizard:dropwizard-db:$dropwizardVersion"
 }
-
-bintray {
-	pkg {
-        name = 'jpa-bundle'
-        desc = 'Dropwizard jpa bundle'
-        labels = ['dropwizard', 'jpa', 'bundle']
-	}
-}

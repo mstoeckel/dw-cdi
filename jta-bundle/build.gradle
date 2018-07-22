@@ -5,10 +5,3 @@ dependencies {
     compile "org.jboss:jboss-transaction-spi:$jbossTxnSpiVersion"
 }
 
-bintray {
-	pkg {
-        name = 'jta-bundle'
-        desc = 'Dropwizard jta bundle'
-        labels = ['dropwizard', 'jta', 'bundle']
-	}
-}
