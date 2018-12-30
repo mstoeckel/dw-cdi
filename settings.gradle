@@ -1,6 +1,8 @@
 rootProject.name = 'dw-cdi'
 
-include 'common'
-include 'cdi-bundle'
-include 'jpa-bundle'
-include 'jta-bundle'
+include ':common'
+include ':cdi-bundle'
+include ':jpa-bundle'
+include ':jta-bundle'
+include ':example:example-api'
+include ':example:example-server'

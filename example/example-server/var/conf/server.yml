@@ -1,0 +1,76 @@
+server:
+  rootPath: /api/*
+  applicationContextPath: /example
+  applicationConnectors:
+    - type: https
+      port: 8443
+      excludedProtocols: [SSLv3]
+      supportedProtocols: [TLSv1.1, TLSv1.2]
+      keyStorePath: var/security/keystore.jks
+      keyStorePassword: keystore
+      validateCerts: false
+      validatePeers: false
+      supportedCipherSuites:
+        - TLS_RSA_WITH_AES_256_CBC_SHA256
+        - TLS_RSA_WITH_AES_256_CBC_SHA
+        - TLS_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_RSA_WITH_AES_128_CBC_SHA
+        - TLS_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+  adminContextPath: /admin
+  adminConnectors:
+    - type: https
+      port: 8444
+      excludedProtocols: [SSLv3]
+      supportedProtocols: [TLSv1.1, TLSv1.2]
+      keyStorePath: var/security/keystore.jks
+      keyStorePassword: keystore
+      validateCerts: false
+      validatePeers: false
+      supportedCipherSuites:
+        - TLS_RSA_WITH_AES_256_CBC_SHA256
+        - TLS_RSA_WITH_AES_256_CBC_SHA
+        - TLS_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_RSA_WITH_AES_128_CBC_SHA
+        - TLS_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+  requestLog:
+    appenders:
+      - type: file
+        archive: true
+        archivedFileCount: 15
+        archivedLogFilenamePattern: var/log/example-request-%d.log.gz
+        currentLogFilename: var/log/example-request.log
+        threshold: INFO
+logging:
+  level: INFO
+  loggers:
+    com.cognodyne.dw: DEBUG
+  appenders:
+    - type: console
+    - type: file
+      archive: true
+      archivedFileCount: 50
+      archivedLogFilenamePattern: var/log/example-%d.log.gz
+      currentLogFilename: var/log/example.log
+      logFormat: "%-5p [%d{\"yyyy-MM-dd''T''HH:mm:ss,SSSXXX\",UTC}] %c: %m%n%rEx"

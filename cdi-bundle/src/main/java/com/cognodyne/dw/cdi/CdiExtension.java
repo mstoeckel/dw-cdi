@@ -22,22 +22,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cognodyne.dw.cdi.annotation.Startup;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-class CdiExtension implements Extension {
+public class CdiExtension implements Extension {
     private static final Logger logger   = LoggerFactory.getLogger(CdiExtension.class);
     private Set<Bean<?>>        beans    = Sets.newHashSet();
     private List<Bean<?>>       startups = Lists.newArrayList();
 
     public Set<Bean<?>> getBeans() {
-        return this.beans;
+        return ImmutableSet.copyOf(this.beans);
     }
 
     public List<Bean<?>> getStartups() {
-        return this.startups;
+        return ImmutableList.copyOf(this.startups);
     }
 
     @SuppressWarnings("unused")

@@ -1,0 +1,985 @@
+INFO  [2018-12-26 05:07:01,241] org.eclipse.jetty.server.AbstractConnector: Stopped application@6c538eb2{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:07:01,242] org.eclipse.jetty.server.AbstractConnector: Stopped admin@738a5848{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:07:01,244] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@64b73e0a{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:07:01,247] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@54be6213{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:07:08,078] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:07:08,079] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:07:08,080] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:07:08,084] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:07:08,237] org.eclipse.jetty.setuid.SetUIDListener: Opened application@63f40ca0{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:07:08,238] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@4dad8ec0{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:07:08,240] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:07:08,278] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@632b305d(server,h=[],w=[]) for SslContextFactory@44598ef7[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:07:08,449] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:07:08,449] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,449] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,449] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:07:08,450] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:07:08,450] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,450] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:07:08,450] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,455] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:07:08,455] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:07:08,455] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:07:08,455] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:07:08,455] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:07:08,457] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@2a0b901c(server,h=[],w=[]) for SslContextFactory@3d104c9b[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:07:08,463] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:07:08,463] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,463] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,463] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:07:08,463] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:07:08,463] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,464] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:07:08,464] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:07:08,947] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    NONE
+
+INFO  [2018-12-26 05:07:08,949] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@45e7bb79{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:07:08,954] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:07:08,955] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:07:08,961] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@48c5698{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:07:08,975] org.eclipse.jetty.server.AbstractConnector: Started application@63f40ca0{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:07:08,977] org.eclipse.jetty.server.AbstractConnector: Started admin@4dad8ec0{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:07:08,977] org.eclipse.jetty.server.Server: Started @3461ms
+INFO  [2018-12-26 05:07:08,985] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container f5d173dd-e2d5-4d72-9b25-4cebb9567079 shut down
+INFO  [2018-12-26 05:10:21,608] org.eclipse.jetty.server.AbstractConnector: Stopped application@63f40ca0{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:10:21,609] org.eclipse.jetty.server.AbstractConnector: Stopped admin@4dad8ec0{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:10:21,610] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@48c5698{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:10:21,614] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@45e7bb79{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:10:28,134] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:10:28,136] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:10:28,136] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:10:28,142] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:10:28,300] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6ee5f485{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:10:28,300] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@20d19f2c{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:10:28,302] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:10:28,343] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@25974207(server,h=[],w=[]) for SslContextFactory@1f15e689[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:10:28,513] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:10:28,513] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,513] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,514] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:10:28,514] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:10:28,514] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,514] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:10:28,514] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,520] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:10:28,520] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:10:28,520] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:10:28,520] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:10:28,520] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:10:28,522] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@24134cbc(server,h=[],w=[]) for SslContextFactory@65da01f4[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:10:28,528] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:10:28,528] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,528] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,528] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:10:28,528] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:10:28,528] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:28,529] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:10:28,529] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:10:29,020] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    NONE
+
+INFO  [2018-12-26 05:10:29,022] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@76596288{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:10:29,028] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:10:29,028] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:10:29,035] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@56c42964{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:10:29,050] org.eclipse.jetty.server.AbstractConnector: Started application@6ee5f485{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:10:29,052] org.eclipse.jetty.server.AbstractConnector: Started admin@20d19f2c{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:10:29,052] org.eclipse.jetty.server.Server: Started @3518ms
+INFO  [2018-12-26 05:10:29,060] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 2818ae7c-ee13-4482-a140-ee8455dcf8ab shut down
+INFO  [2018-12-26 05:17:07,001] org.eclipse.jetty.server.AbstractConnector: Stopped application@6ee5f485{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:17:07,002] org.eclipse.jetty.server.AbstractConnector: Stopped admin@20d19f2c{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:17:07,003] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@56c42964{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:17:07,007] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@76596288{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:17:13,618] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:17:13,621] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:17:13,621] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@698f4aa...
+INFO  [2018-12-26 05:21:31,064] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:21:31,238] org.eclipse.jetty.setuid.SetUIDListener: Opened application@42211e04{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:21:31,238] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@6233c6c2{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:21:31,241] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:21:31,282] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@46894dc5(server,h=[],w=[]) for SslContextFactory@596afb2f[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:21:31,461] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:21:31,461] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,461] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,461] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:21:31,461] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:21:31,461] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,462] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:21:31,462] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,467] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:21:31,467] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:21:31,467] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:21:31,467] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:21:31,467] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:21:31,470] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@42b43a6(server,h=[],w=[]) for SslContextFactory@1d622556[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:21:31,475] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:21:31,475] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,475] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,475] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:21:31,475] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:21:31,476] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:31,476] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:21:31,476] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:21:32,129] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    NONE
+
+INFO  [2018-12-26 05:21:32,131] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@b787274{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:21:32,137] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:21:32,137] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:21:32,146] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1fd0ae78{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:21:32,162] org.eclipse.jetty.server.AbstractConnector: Started application@42211e04{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:21:32,167] org.eclipse.jetty.server.AbstractConnector: Started admin@6233c6c2{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:21:32,167] org.eclipse.jetty.server.Server: Started @261640ms
+INFO  [2018-12-26 05:21:32,178] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 0b9ca454-ad9c-45ee-8bb1-d94aaa41b49a shut down
+INFO  [2018-12-26 05:28:22,247] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:28:22,249] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:28:22,249] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:28:22,254] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:28:22,413] org.eclipse.jetty.setuid.SetUIDListener: Opened application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:28:22,413] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:28:22,416] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:28:22,458] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@57fdb8a4(server,h=[],w=[]) for SslContextFactory@17222c11[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:28:22,629] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:28:22,629] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,629] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,629] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:28:22,629] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:28:22,630] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,630] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:28:22,630] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,636] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:28:22,636] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:28:22,637] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:28:22,637] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:28:22,637] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:28:22,639] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@6544899b(server,h=[],w=[]) for SslContextFactory@6da54910[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:28:22,643] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:28:23,206] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/hello (com.cognodyne.dw.cdi.example.resources.HelloResource)
+
+INFO  [2018-12-26 05:28:23,208] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@690df641{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:28:23,213] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:28:23,213] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:28:23,220] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2e3252{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:28:23,237] org.eclipse.jetty.server.AbstractConnector: Started application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:28:23,239] org.eclipse.jetty.server.AbstractConnector: Started admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:28:23,239] org.eclipse.jetty.server.Server: Started @3629ms
+INFO  [2018-12-26 05:28:23,246] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 77284e47-c817-4cba-8f40-5fba1ad029f2 shut down
+INFO  [2018-12-26 05:29:14,425] org.eclipse.jetty.server.AbstractConnector: Stopped application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:29:14,426] org.eclipse.jetty.server.AbstractConnector: Stopped admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:29:14,427] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2e3252{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:29:14,430] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@690df641{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:39:52,895] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:39:52,897] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:39:52,897] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:39:52,902] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:39:53,060] org.eclipse.jetty.setuid.SetUIDListener: Opened application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:39:53,060] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:39:53,063] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:39:53,103] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@57fdb8a4(server,h=[],w=[]) for SslContextFactory@17222c11[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:39:53,285] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:39:53,285] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,285] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,285] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:39:53,285] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:39:53,286] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,286] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:39:53,286] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,292] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:39:53,292] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:39:53,292] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:39:53,292] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:39:53,292] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:39:53,294] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@6544899b(server,h=[],w=[]) for SslContextFactory@6da54910[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:39:53,298] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:39:53,298] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,298] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,299] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:39:53,299] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:39:53,299] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,299] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:39:53,299] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:39:53,843] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/hello (com.cognodyne.dw.cdi.example.resources.HelloResource)
+
+INFO  [2018-12-26 05:39:53,845] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@690df641{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:39:53,850] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:39:53,850] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:39:53,856] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2e3252{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:39:53,871] org.eclipse.jetty.server.AbstractConnector: Started application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:39:53,873] org.eclipse.jetty.server.AbstractConnector: Started admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:39:53,873] org.eclipse.jetty.server.Server: Started @3604ms
+INFO  [2018-12-26 05:39:53,881] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container ce5068c0-ca46-4ac3-8bb5-b0d3a670befb shut down
+WARN  [2018-12-26 05:40:03,065] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: Unknown HK2 failure detected:
+MultiException stack 1 of 1
+org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+	at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:231)
+	at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:239)
+	at org.jboss.weld.bean.builtin.BeanManagerProxy.getBeans(BeanManagerProxy.java:97)
+	at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory$1.getInstance(CdiComponentProvider.java:218)
+	at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory.provide(CdiComponentProvider.java:189)
+	at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+	at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+	at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+	at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+	at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1655)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:45)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:533)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1317)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:531)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+	at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+WARN  [2018-12-26 05:40:03,072] org.eclipse.jetty.server.HttpChannel: /example/api/hello
+! org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+! at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:231)
+! at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:239)
+! at org.jboss.weld.bean.builtin.BeanManagerProxy.getBeans(BeanManagerProxy.java:97)
+! at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory$1.getInstance(CdiComponentProvider.java:218)
+! at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory.provide(CdiComponentProvider.java:189)
+! at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+! at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+! ... 69 common frames omitted
+! Causing: org.glassfish.hk2.api.MultiException: A MultiException has 1 exceptions.  They are:
+! 1. org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+! 
+! at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:494)
+! at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+! at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+! at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+! at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+! at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+! at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+! at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+! at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+! at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+! at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+! ... 44 common frames omitted
+! Causing: javax.servlet.ServletException: A MultiException has 1 exceptions.  They are:
+! 1. org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+! 
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:489)
+! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1655)
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:45)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:533)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1317)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+! at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at org.eclipse.jetty.server.Server.handle(Server.java:531)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+! at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+! at java.lang.Thread.run(Thread.java:745)
+INFO  [2018-12-26 05:42:26,418] org.eclipse.jetty.server.AbstractConnector: Stopped application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:42:26,419] org.eclipse.jetty.server.AbstractConnector: Stopped admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:42:26,421] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2e3252{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:42:26,424] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@690df641{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:42:32,682] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:42:32,684] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:42:32,684] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:42:32,693] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:42:32,837] org.eclipse.jetty.setuid.SetUIDListener: Opened application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:42:32,837] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:42:32,839] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:42:32,877] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@19ae2ee5(server,h=[],w=[]) for SslContextFactory@44b940a2[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,048] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:42:33,049] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,054] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:42:33,054] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:42:33,054] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:42:33,054] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:42:33,054] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:42:33,056] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@7aa01bd9(server,h=[],w=[]) for SslContextFactory@7e61e25c[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:42:33,060] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:42:33,067] org.jboss.weld.environment.servletWeldServlet: WELD-ENV-001007: Initialize Weld using ServletContextListener
+INFO  [2018-12-26 05:42:33,081] org.jboss.weld.environment.servletJetty: WELD-ENV-001201: Jetty 7.2+ detected, CDI injection will be available in Servlets and Filters. Injection into Listeners is not supported.
+INFO  [2018-12-26 05:42:33,609] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/hello (com.cognodyne.dw.cdi.example.resources.HelloResource)
+
+INFO  [2018-12-26 05:42:33,610] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@395a573c{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:42:33,615] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:42:33,615] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:42:33,621] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@844e66d{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:42:33,635] org.eclipse.jetty.server.AbstractConnector: Started application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:42:33,638] org.eclipse.jetty.server.AbstractConnector: Started admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:42:33,638] org.eclipse.jetty.server.Server: Started @3496ms
+INFO  [2018-12-26 05:42:33,643] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 8874b740-e8b6-4afb-abad-5474d71de68c shut down
+WARN  [2018-12-26 05:42:41,600] org.eclipse.jetty.server.HttpChannel: /example/api/hello
+! org.jboss.weld.exceptions.UnsatisfiedResolutionException: WELD-001334: Unsatisfied dependencies for type HttpRequestContext with qualifiers  
+! at org.jboss.weld.bean.builtin.InstanceImpl.checkBeanResolved(InstanceImpl.java:241)
+! at org.jboss.weld.bean.builtin.InstanceImpl.get(InstanceImpl.java:113)
+! at org.jboss.weld.module.web.servlet.HttpContextLifecycle.getRequestContext(HttpContextLifecycle.java:140)
+! at org.jboss.weld.module.web.servlet.HttpContextLifecycle.requestDestroyed(HttpContextLifecycle.java:331)
+! at org.jboss.weld.module.web.servlet.WeldInitialListener.requestDestroyed(WeldInitialListener.java:135)
+! at org.jboss.weld.servlet.api.helpers.ForwardingServletListener.requestDestroyed(ForwardingServletListener.java:38)
+! at org.jboss.weld.environment.servlet.Listener.requestDestroyed(Listener.java:140)
+! at org.eclipse.jetty.server.handler.ContextHandler.requestDestroyed(ContextHandler.java:1267)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1322)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+! at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at org.eclipse.jetty.server.Server.handle(Server.java:531)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+! at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+! at java.lang.Thread.run(Thread.java:745)
+INFO  [2018-12-26 05:43:44,345] org.eclipse.jetty.server.AbstractConnector: Stopped application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:43:44,346] org.eclipse.jetty.server.AbstractConnector: Stopped admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:43:44,347] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@844e66d{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:43:44,358] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@395a573c{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:43:50,589] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:43:50,591] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:43:50,592] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:43:50,601] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:43:50,773] org.eclipse.jetty.setuid.SetUIDListener: Opened application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:43:50,773] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:43:50,776] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:43:50,822] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@19ae2ee5(server,h=[],w=[]) for SslContextFactory@44b940a2[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:43:51,014] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:43:51,014] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,014] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,014] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:43:51,014] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:43:51,014] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,015] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:43:51,015] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,020] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:43:51,020] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:43:51,020] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:43:51,020] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:43:51,020] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:43:51,022] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@7aa01bd9(server,h=[],w=[]) for SslContextFactory@7e61e25c[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:43:51,026] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:43:51,026] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,026] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,026] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:43:51,027] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:43:51,027] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,027] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:43:51,027] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:43:51,034] org.jboss.weld.environment.servletWeldServlet: WELD-ENV-001007: Initialize Weld using ServletContextListener
+INFO  [2018-12-26 05:43:51,050] org.jboss.weld.environment.servletJetty: WELD-ENV-001201: Jetty 7.2+ detected, CDI injection will be available in Servlets and Filters. Injection into Listeners is not supported.
+INFO  [2018-12-26 05:43:51,611] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/hello (com.cognodyne.dw.cdi.example.resources.HelloResource)
+
+INFO  [2018-12-26 05:43:51,613] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@379f9555{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:43:51,618] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:43:51,618] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:43:51,625] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5b665a30{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:43:51,640] org.eclipse.jetty.server.AbstractConnector: Started application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:43:51,641] org.eclipse.jetty.server.AbstractConnector: Started admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:43:51,642] org.eclipse.jetty.server.Server: Started @3619ms
+INFO  [2018-12-26 05:43:51,647] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container e078bd4c-6f0e-49ca-ad4e-2697833749b1 shut down
+WARN  [2018-12-26 05:43:55,604] org.eclipse.jetty.server.HttpChannel: /example/api/hello
+! org.jboss.weld.exceptions.UnsatisfiedResolutionException: WELD-001334: Unsatisfied dependencies for type HttpRequestContext with qualifiers  
+! at org.jboss.weld.bean.builtin.InstanceImpl.checkBeanResolved(InstanceImpl.java:241)
+! at org.jboss.weld.bean.builtin.InstanceImpl.get(InstanceImpl.java:113)
+! at org.jboss.weld.module.web.servlet.HttpContextLifecycle.getRequestContext(HttpContextLifecycle.java:140)
+! at org.jboss.weld.module.web.servlet.HttpContextLifecycle.requestDestroyed(HttpContextLifecycle.java:331)
+! at org.jboss.weld.module.web.servlet.WeldInitialListener.requestDestroyed(WeldInitialListener.java:135)
+! at org.jboss.weld.servlet.api.helpers.ForwardingServletListener.requestDestroyed(ForwardingServletListener.java:38)
+! at org.jboss.weld.environment.servlet.Listener.requestDestroyed(Listener.java:140)
+! at org.eclipse.jetty.server.handler.ContextHandler.requestDestroyed(ContextHandler.java:1267)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1322)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+! at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at org.eclipse.jetty.server.Server.handle(Server.java:531)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+! at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+! at java.lang.Thread.run(Thread.java:745)
+INFO  [2018-12-26 05:45:02,427] org.eclipse.jetty.server.AbstractConnector: Stopped application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:45:02,428] org.eclipse.jetty.server.AbstractConnector: Stopped admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:45:02,429] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5b665a30{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:45:02,439] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@379f9555{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:45:08,466] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:45:08,468] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:45:08,468] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:45:08,473] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:45:08,620] org.eclipse.jetty.setuid.SetUIDListener: Opened application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:45:08,621] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:45:08,623] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:45:08,658] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@57fdb8a4(server,h=[],w=[]) for SslContextFactory@17222c11[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:45:08,819] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:45:08,819] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,819] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,820] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:08,820] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:45:08,820] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,820] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:08,820] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,826] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:45:08,826] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:45:08,826] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:45:08,826] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:45:08,826] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:45:08,828] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@6544899b(server,h=[],w=[]) for SslContextFactory@6da54910[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:08,832] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:09,363] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/hello (com.cognodyne.dw.cdi.example.resources.HelloResource)
+
+INFO  [2018-12-26 05:45:09,364] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@690df641{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:45:09,369] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:45:09,370] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:45:09,377] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2e3252{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:45:09,392] org.eclipse.jetty.server.AbstractConnector: Started application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:45:09,395] org.eclipse.jetty.server.AbstractConnector: Started admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:45:09,395] org.eclipse.jetty.server.Server: Started @3466ms
+INFO  [2018-12-26 05:45:09,402] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 811941f9-c48d-4029-aec8-b0c9a2b398af shut down
+WARN  [2018-12-26 05:45:13,068] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: Unknown HK2 failure detected:
+MultiException stack 1 of 1
+org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+	at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:231)
+	at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:239)
+	at org.jboss.weld.bean.builtin.BeanManagerProxy.getBeans(BeanManagerProxy.java:97)
+	at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory$1.getInstance(CdiComponentProvider.java:218)
+	at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory.provide(CdiComponentProvider.java:189)
+	at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+	at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+	at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+	at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+	at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1655)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:45)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:533)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1317)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:531)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+	at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+WARN  [2018-12-26 05:45:13,075] org.eclipse.jetty.server.HttpChannel: /example/api/hello
+! org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+! at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:231)
+! at org.jboss.weld.bean.builtin.BeanManagerProxy.checkContainerState(BeanManagerProxy.java:239)
+! at org.jboss.weld.bean.builtin.BeanManagerProxy.getBeans(BeanManagerProxy.java:97)
+! at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory$1.getInstance(CdiComponentProvider.java:218)
+! at org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider$CdiFactory.provide(CdiComponentProvider.java:189)
+! at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+! at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+! ... 69 common frames omitted
+! Causing: org.glassfish.hk2.api.MultiException: A MultiException has 1 exceptions.  They are:
+! 1. org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+! 
+! at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:494)
+! at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+! at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+! at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+! at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+! at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+! at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+! at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+! at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+! at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+! at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+! at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+! ... 44 common frames omitted
+! Causing: javax.servlet.ServletException: A MultiException has 1 exceptions.  They are:
+! 1. org.jboss.weld.exceptions.IllegalStateException: WELD-001333: BeanManager method getBeans() is not available after shutdown
+! 
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:489)
+! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1655)
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:45)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1642)
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:533)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1317)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+! at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at org.eclipse.jetty.server.Server.handle(Server.java:531)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+! at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+! at java.lang.Thread.run(Thread.java:745)
+INFO  [2018-12-26 05:45:32,538] org.eclipse.jetty.server.AbstractConnector: Stopped application@24dd44f9{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:45:32,539] org.eclipse.jetty.server.AbstractConnector: Stopped admin@ccd341d{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:45:32,540] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2e3252{/admin,null,UNAVAILABLE}
+INFO  [2018-12-26 05:45:32,544] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@690df641{/example,null,UNAVAILABLE}
+INFO  [2018-12-26 05:45:38,708] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-26 05:45:38,709] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-26 05:45:38,710] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-26 05:45:38,719] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+INFO  [2018-12-26 05:45:38,878] org.eclipse.jetty.setuid.SetUIDListener: Opened application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:45:38,878] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:45:38,880] org.eclipse.jetty.server.Server: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_92-b14
+INFO  [2018-12-26 05:45:38,919] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@19ae2ee5(server,h=[],w=[]) for SslContextFactory@44b940a2[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:45:39,111] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:45:39,111] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,111] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,111] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:39,112] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:45:39,112] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,112] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:39,112] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,118] io.dropwizard.jetty.HttpsConnectorFactory: Supported protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:45:39,119] io.dropwizard.jetty.HttpsConnectorFactory: Supported cipher suites: [TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV, TLS_DH_anon_WITH_AES_128_GCM_SHA256, TLS_DH_anon_WITH_AES_128_CBC_SHA256, TLS_ECDH_anon_WITH_AES_128_CBC_SHA, TLS_DH_anon_WITH_AES_128_CBC_SHA, TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA, SSL_DH_anon_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_DES_CBC_SHA, SSL_DHE_RSA_WITH_DES_CBC_SHA, SSL_DHE_DSS_WITH_DES_CBC_SHA, SSL_DH_anon_WITH_DES_CBC_SHA, SSL_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA, SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA, TLS_RSA_WITH_NULL_SHA256, TLS_ECDHE_ECDSA_WITH_NULL_SHA, TLS_ECDHE_RSA_WITH_NULL_SHA, SSL_RSA_WITH_NULL_SHA, TLS_ECDH_ECDSA_WITH_NULL_SHA, TLS_ECDH_RSA_WITH_NULL_SHA, TLS_ECDH_anon_WITH_NULL_SHA, SSL_RSA_WITH_NULL_MD5, TLS_KRB5_WITH_3DES_EDE_CBC_SHA, TLS_KRB5_WITH_3DES_EDE_CBC_MD5, TLS_KRB5_WITH_DES_CBC_SHA, TLS_KRB5_WITH_DES_CBC_MD5, TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA, TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5]
+INFO  [2018-12-26 05:45:39,119] io.dropwizard.jetty.HttpsConnectorFactory: Configured protocols: [TLSv1.1, TLSv1.2]
+INFO  [2018-12-26 05:45:39,119] io.dropwizard.jetty.HttpsConnectorFactory: Excluded protocols: [SSLv3]
+INFO  [2018-12-26 05:45:39,119] io.dropwizard.jetty.HttpsConnectorFactory: Configured cipher suites: [TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA]
+INFO  [2018-12-26 05:45:39,121] org.eclipse.jetty.util.ssl.SslContextFactory: x509=X509@7aa01bd9(server,h=[],w=[]) for SslContextFactory@7e61e25c[provider=null,keyStore=file:///Users/mstoeckel/projects/cognodyne/weld3/example/example-server/var/security/keystore.jks,trustStore=null]
+INFO  [2018-12-26 05:45:39,128] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA256' is supported
+INFO  [2018-12-26 05:45:39,128] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,128] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,128] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:39,128] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384' is supported
+INFO  [2018-12-26 05:45:39,129] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,129] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' is supported
+INFO  [2018-12-26 05:45:39,129] org.eclipse.jetty.util.ssl.SslContextFactory: No Cipher matching 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA' is supported
+INFO  [2018-12-26 05:45:39,138] org.jboss.weld.environment.servletWeldServlet: WELD-ENV-001007: Initialize Weld using ServletContextListener
+INFO  [2018-12-26 05:45:39,159] org.jboss.weld.environment.servletJetty: WELD-ENV-001201: Jetty 7.2+ detected, CDI injection will be available in Servlets and Filters. Injection into Listeners is not supported.
+INFO  [2018-12-26 05:45:39,700] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/hello (com.cognodyne.dw.cdi.example.resources.HelloResource)
+
+INFO  [2018-12-26 05:45:39,701] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@395a573c{/example,null,AVAILABLE}
+INFO  [2018-12-26 05:45:39,706] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2018-12-26 05:45:39,707] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2018-12-26 05:45:39,712] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@844e66d{/admin,null,AVAILABLE}
+INFO  [2018-12-26 05:45:39,729] org.eclipse.jetty.server.AbstractConnector: Started application@373afd6c{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+INFO  [2018-12-26 05:45:39,731] org.eclipse.jetty.server.AbstractConnector: Started admin@521441d5{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+INFO  [2018-12-26 05:45:39,731] org.eclipse.jetty.server.Server: Started @3570ms
+INFO  [2018-12-26 05:45:39,737] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 32819c8d-b46f-4bd2-94f6-851a07f0bf53 shut down
+WARN  [2018-12-26 05:45:45,147] org.eclipse.jetty.server.HttpChannel: /example/api/hello
+! org.jboss.weld.exceptions.UnsatisfiedResolutionException: WELD-001334: Unsatisfied dependencies for type HttpRequestContext with qualifiers  
+! at org.jboss.weld.bean.builtin.InstanceImpl.checkBeanResolved(InstanceImpl.java:241)
+! at org.jboss.weld.bean.builtin.InstanceImpl.get(InstanceImpl.java:113)
+! at org.jboss.weld.module.web.servlet.HttpContextLifecycle.getRequestContext(HttpContextLifecycle.java:140)
+! at org.jboss.weld.module.web.servlet.HttpContextLifecycle.requestDestroyed(HttpContextLifecycle.java:331)
+! at org.jboss.weld.module.web.servlet.WeldInitialListener.requestDestroyed(WeldInitialListener.java:135)
+! at org.jboss.weld.servlet.api.helpers.ForwardingServletListener.requestDestroyed(ForwardingServletListener.java:38)
+! at org.jboss.weld.environment.servlet.Listener.requestDestroyed(Listener.java:140)
+! at org.eclipse.jetty.server.handler.ContextHandler.requestDestroyed(ContextHandler.java:1267)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1322)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1219)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:239)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:724)
+! at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:67)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+! at org.eclipse.jetty.server.Server.handle(Server.java:531)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:352)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:291)
+! at org.eclipse.jetty.io.ssl.SslConnection$3.succeeded(SslConnection.java:151)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+! at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:762)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:680)
+! at java.lang.Thread.run(Thread.java:745)
