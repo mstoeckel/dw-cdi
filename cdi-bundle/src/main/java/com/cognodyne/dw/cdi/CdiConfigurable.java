@@ -1,5 +1,7 @@
 package com.cognodyne.dw.cdi;
 
+import java.util.Optional;
+
 public interface CdiConfigurable {
-    public CdiConfiguration getCdiConfiguration();
+    Optional<CdiConfiguration> getCdiConfiguration();
 }

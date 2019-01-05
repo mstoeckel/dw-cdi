@@ -1,0 +1,99 @@
+cdi:
+  jpa:
+    persistenceUnitName: exampleUnit
+    transactionType: JTA
+    jarFilePaths:
+      - build/classes/java/main
+    jtaDataSource:
+      driverClass: oracle.jdbc.OracleDriver
+      #driverClass: oracle.jdbc.xa.client.OracleXADataSource
+      #driverClass: com.arjuna.ats.jdbc.TransactionalDriver
+      user: SENTRY_UAM
+      password: njcf0TT1
+      url: jdbc:oracle:thin:@//dhstierupgrade.aspex.local:1521/odbtest1.aspex.local
+      validationQuery: select 1 from dual
+    properties:
+      hibernate.session_factory_name: java:comp/sentryUamEMF
+      hibernate.dialect: org.hibernate.dialect.Oracle10gDialect
+      hibernate.hbm2ddl.auto: validate
+      hibernate.show_sql: false
+      hibernate.format_sql: true
+      hibernate.default_schema: SENTRY_UAM
+      hibernate.temp.use_jdbc_metadata_defaults: false
+      
+server:
+  rootPath: /api/*
+  applicationContextPath: /example
+  applicationConnectors:
+    - type: https
+      port: 8443
+      excludedProtocols: [SSLv3]
+      supportedProtocols: [TLSv1.1, TLSv1.2]
+      keyStorePath: var/security/keystore.jks
+      keyStorePassword: keystore
+      validateCerts: false
+      validatePeers: false
+      supportedCipherSuites:
+        - TLS_RSA_WITH_AES_256_CBC_SHA256
+        - TLS_RSA_WITH_AES_256_CBC_SHA
+        - TLS_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_RSA_WITH_AES_128_CBC_SHA
+        - TLS_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+  adminContextPath: /admin
+  adminConnectors:
+    - type: https
+      port: 8444
+      excludedProtocols: [SSLv3]
+      supportedProtocols: [TLSv1.1, TLSv1.2]
+      keyStorePath: var/security/keystore.jks
+      keyStorePassword: keystore
+      validateCerts: false
+      validatePeers: false
+      supportedCipherSuites:
+        - TLS_RSA_WITH_AES_256_CBC_SHA256
+        - TLS_RSA_WITH_AES_256_CBC_SHA
+        - TLS_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_RSA_WITH_AES_128_CBC_SHA
+        - TLS_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+        - TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+  requestLog:
+    appenders:
+      - type: file
+        archive: true
+        archivedFileCount: 15
+        archivedLogFilenamePattern: var/log/example-request-%d.log.gz
+        currentLogFilename: var/log/example-request.log
+        threshold: INFO
+logging:
+  level: INFO
+  loggers:
+    com.cognodyne: DEBUG
+  appenders:
+    - type: console
+    - type: file
+      archive: true
+      archivedFileCount: 50
+      archivedLogFilenamePattern: var/log/example-%d.log.gz
+      currentLogFilename: var/log/example.log
+      logFormat: "%-5p [%d{\"yyyy-MM-dd''T''HH:mm:ss,SSSXXX\",UTC}] %c: %m%n%rEx"

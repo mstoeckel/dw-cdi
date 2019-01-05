@@ -1,0 +1,81 @@
+INFO  [2018-12-31 15:07:30,361] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-31 15:07:30,363] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-31 15:07:30,364] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-31 15:07:30,375] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+ERROR [2018-12-31 15:07:30,533] io.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method)
+! at sun.nio.ch.Net.bind(Net.java:433)
+! at sun.nio.ch.Net.bind(Net.java:425)
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+! at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:331)
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:299)
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200)
+! ... 9 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:188)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:67)
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:87)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:93)
+! at com.cognodyne.dw.cdi.CdiBundle$ApplicationStarter.start(CdiBundle.java:74)
+! at com.cognodyne.dw.cdi.example.DwCdiExampleApplication.main(DwCdiExampleApplication.java:27)
+INFO  [2018-12-31 15:07:30,552] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 408a8404-b3c9-47b7-95c2-0af53ae32021 shut down
+INFO  [2018-12-31 15:08:19,228] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-31 15:08:19,230] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-31 15:08:19,230] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-31 15:08:19,241] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+ERROR [2018-12-31 15:08:19,387] io.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method)
+! at sun.nio.ch.Net.bind(Net.java:433)
+! at sun.nio.ch.Net.bind(Net.java:425)
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+! at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:331)
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:299)
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200)
+! ... 9 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:188)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:67)
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:87)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:93)
+! at com.cognodyne.dw.cdi.CdiBundle$ApplicationStarter.start(CdiBundle.java:74)
+! at com.cognodyne.dw.cdi.example.DwCdiExampleApplication.main(DwCdiExampleApplication.java:27)
+INFO  [2018-12-31 15:08:19,407] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 30b3456b-c251-438b-a8cf-2de233455fa2 shut down
+INFO  [2018-12-31 15:12:05,470] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /example
+INFO  [2018-12-31 15:12:05,472] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+DEBUG [2018-12-31 15:12:05,473] com.cognodyne.dw.cdi.CdiBundle: running with bm:com.cognodyne.dw.cdi.EnhancedBeanManager@1cb9ef52...
+INFO  [2018-12-31 15:12:05,483] io.dropwizard.server.ServerFactory: Starting DwCdiExampleApplication
+ERROR [2018-12-31 15:12:05,643] io.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method)
+! at sun.nio.ch.Net.bind(Net.java:433)
+! at sun.nio.ch.Net.bind(Net.java:425)
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+! at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:331)
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:299)
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200)
+! ... 9 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:188)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:67)
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:87)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:93)
+! at com.cognodyne.dw.cdi.CdiBundle$ApplicationStarter.start(CdiBundle.java:74)
+! at com.cognodyne.dw.cdi.example.DwCdiExampleApplication.main(DwCdiExampleApplication.java:27)
+INFO  [2018-12-31 15:12:05,662] org.jboss.weld.Bootstrap: WELD-ENV-002001: Weld SE container 334a9ca6-d1d5-486f-afb6-0c0ea7b5ce53 shut down

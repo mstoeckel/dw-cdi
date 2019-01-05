@@ -1,6 +1,0 @@
-dependencies {
-	compile project(':common') 
-	compile "org.jboss:jandex:$jandexVersion"
-    compile ("org.hibernate:hibernate-core:$hibernateVersion") { exclude module:'jandex' }
-    compile "io.dropwizard:dropwizard-db:$dropwizardVersion"
-}

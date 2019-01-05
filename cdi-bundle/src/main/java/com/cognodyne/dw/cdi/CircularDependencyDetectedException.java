@@ -1,7 +1,7 @@
 package com.cognodyne.dw.cdi;
 
 public class CircularDependencyDetectedException extends RuntimeException {
-    private static final long serialVersionUID = 6367736400309110165L;
+    private static final long serialVersionUID = -69752638910986949L;
 
     public CircularDependencyDetectedException() {
         super();

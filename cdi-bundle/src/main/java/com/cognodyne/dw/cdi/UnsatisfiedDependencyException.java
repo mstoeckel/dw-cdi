@@ -1,7 +1,7 @@
 package com.cognodyne.dw.cdi;
 
 public class UnsatisfiedDependencyException extends RuntimeException {
-    private static final long serialVersionUID = -1339055089071955653L;
+    private static final long serialVersionUID = 5775069784236286403L;
 
     public UnsatisfiedDependencyException() {
         super();

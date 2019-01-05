@@ -1,0 +1,4 @@
+dependencies {
+    compile project(':example:example-api')
+    compile "com.oracle:ojdbc6:$oracleVersion"
+}

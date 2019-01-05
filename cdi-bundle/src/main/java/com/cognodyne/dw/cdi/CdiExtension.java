@@ -5,17 +5,16 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
-import javax.enterprise.inject.spi.AfterDeploymentValidation;
-import javax.enterprise.inject.spi.Bean;
+import javax.enterprise.inject.spi.AfterBeanDiscovery;
+import javax.enterprise.inject.spi.AnnotatedType;
 import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.BeforeBeanDiscovery;
 import javax.enterprise.inject.spi.Extension;
-import javax.enterprise.inject.spi.ProcessBean;
+import javax.enterprise.inject.spi.ProcessAnnotatedType;
 import javax.inject.Singleton;
 
 import org.slf4j.Logger;
@@ -27,76 +26,81 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-class CdiExtension implements Extension {
-    private static final Logger logger   = LoggerFactory.getLogger(CdiExtension.class);
-    private Set<Bean<?>>        beans    = Sets.newHashSet();
-    private List<Bean<?>>       startups = Lists.newArrayList();
+import jersey.repackaged.com.google.common.collect.ImmutableList;
 
-    public Set<Bean<?>> getBeans() {
-        return this.beans;
+public class CdiExtension implements Extension {
+    private static final Logger    logger         = LoggerFactory.getLogger(CdiExtension.class);
+    private Set<AnnotatedType<?>>  annotatedTypes = Sets.newHashSet();
+    private List<AnnotatedType<?>> startups;
+
+    public Set<AnnotatedType<?>> getAnnotatedTypes() {
+        return this.annotatedTypes;
     }
 
-    public List<Bean<?>> getStartups() {
+    public List<AnnotatedType<?>> getStartups() {
         return this.startups;
     }
 
     @SuppressWarnings("unused")
-    private <X> void onProcessBean(@Observes ProcessBean<X> event, BeanManager beanManager) {
-        logger.debug("onProcessBean:{}", event.getBean());
-        Bean<X> bean = event.getBean();
-        this.beans.add(bean);
+    private void beforeBeanDiscovery(@Observes BeforeBeanDiscovery bbd) {
+        logger.debug("beginning the scanning process");
     }
 
     @SuppressWarnings("unused")
-    private void onAfterDeploymentValidation(@Observes AfterDeploymentValidation event, BeanManager beanManager) {
-        this.startups = orderDependencies(this.getBeans().stream()//
-                .filter(bean -> (CdiUtil.isAnnotationPresent(bean, ApplicationScoped.class) || CdiUtil.isAnnotationPresent(bean, Singleton.class)) && CdiUtil.isAnnotationPresent(bean, Startup.class))//
-                .collect(Collectors.toList()));
-        logger.debug("ordered startup beans:{}", this.startups);
-        this.startups.stream().forEach(bean -> {
-            beanManager.getReference(bean, bean.getBeanClass(), beanManager.createCreationalContext(bean)).toString();
-        });
+    private <T> void processAnnotatedType(@Observes ProcessAnnotatedType<T> pat) {
+        logger.debug("scanning type: " + pat.getAnnotatedType().getJavaClass().getName());
+        this.annotatedTypes.add(pat.getAnnotatedType());
     }
 
-    private <T> List<Bean<? extends T>> orderDependencies(List<Bean<? extends T>> list) {
+    @SuppressWarnings("unused")
+    private void afterBeanDiscovery(@Observes AfterBeanDiscovery abd, BeanManager bm) {
+        logger.debug("finished the scanning process");
+        this.annotatedTypes = ImmutableSet.copyOf(this.annotatedTypes);
+        this.startups = ImmutableList.copyOf(this.orderDependencies(this.annotatedTypes.stream()// 
+                .filter((AnnotatedType<?> type) -> (type.isAnnotationPresent(ApplicationScoped.class) || type.isAnnotationPresent(Singleton.class)) && type.isAnnotationPresent(Startup.class))//
+                .collect(Collectors.toList())));
+//        WeldManager weldManager = (WeldManager)bm;
+//        this.getAnnotatedTypes().stream()//
+//        .filter(t -> t.isAnnotationPresent(Service.class))//
+//        //.filter(t -> configuration.getCdiConfiguration() == null || configuration.getCdiConfiguration().include(t.getJavaClass()))//
+//        .forEach(t -> weldManager.getServices().add((Class<org.jboss.weld.bootstrap.api.Service>) t.getAnnotation(Service.class).type(), (org.jboss.weld.bootstrap.api.Service) weldManager.instance().select(t.getJavaClass()).get()));
+    }
+
+    private <T> List<AnnotatedType<? extends T>> orderDependencies(List<AnnotatedType<? extends T>> list) {
         //first create a map of beans by class
-        Map<Class<?>, Bean<? extends T>> beans = Maps.newHashMap();
-        for (Bean<? extends T> bean : list) {
-            beans.put(bean.getBeanClass(), bean);
+        Map<Class<?>, AnnotatedType<? extends T>> types = Maps.newHashMap();
+        for (AnnotatedType<? extends T> type : list) {
+            types.put(type.getJavaClass(), type);
         }
-        Graph<T> graph = new Graph<T>(beans);
+        Graph<T> graph = new Graph<T>(types);
         //next we get the sorted node and turn it into list of beans
         return graph.getSorted().stream()//
-                .map(new Function<Node<T>, Bean<? extends T>>() {
-                    public Bean<? extends T> apply(Node<T> t) {
-                        return t.bean;
-                    }
-                })//
+                .map(t -> t.type)//
                 .collect(Collectors.toList());
     }
 
     private static class Graph<T> {
         private Set<Node<T>> nodes = Sets.newHashSet();
 
-        public Graph(Map<Class<?>, Bean<? extends T>> beans) {
+        public Graph(Map<Class<?>, AnnotatedType<? extends T>> types) {
             Map<Class<?>, Node<T>> nodeMap = Maps.newHashMap();
-            for (Entry<Class<?>, Bean<? extends T>> entry : beans.entrySet()) {
+            for (Entry<Class<?>, AnnotatedType<? extends T>> entry : types.entrySet()) {
                 Node<T> node = nodeMap.get(entry.getKey());
                 if (node == null) {
                     node = new Node<T>(entry.getValue());
                     nodeMap.put(entry.getKey(), node);
                 }
                 nodes.add(node);
-                Startup anno = CdiUtil.getAnnotation(entry.getValue(), Startup.class);
+                Startup anno = entry.getValue().getAnnotation(Startup.class);
                 if (anno != null) {
                     for (Class<?> cls : anno.after()) {
-                        Bean<? extends T> bean = beans.get(cls);
-                        if (bean == null) {
+                        AnnotatedType<? extends T> type = types.get(cls);
+                        if (type == null) {
                             throw new UnsatisfiedDependencyException(cls + " not found");
                         }
                         Node<T> dependsOnNode = nodeMap.get(cls);
                         if (dependsOnNode == null) {
-                            dependsOnNode = new Node<T>(bean);
+                            dependsOnNode = new Node<T>(type);
                             nodeMap.put(cls, dependsOnNode);
                         }
                         node.dependsOn.add(dependsOnNode);
@@ -108,11 +112,7 @@ class CdiExtension implements Extension {
         // implementation of Kahn's topological sort algorithm  https://en.wikipedia.org/wiki/Topological_sorting
         public List<Node<T>> getSorted() {
             List<Node<T>> list = Lists.newArrayList();
-            Set<Node<T>> set = nodes.stream().filter(new Predicate<Node<T>>() {
-                public boolean test(Node<T> node) {
-                    return !hasIncomingEdge(node);
-                }
-            }).collect(Collectors.toSet());
+            Set<Node<T>> set = nodes.stream().filter(node -> !hasIncomingEdge(node)).collect(Collectors.toSet());
             while (!set.isEmpty()) {
                 Node<T> node = removeAny(set);
                 list.add(node);
@@ -123,19 +123,10 @@ class CdiExtension implements Extension {
                     }
                 }
             }
-            Optional<Node<T>> node = nodes.stream().filter(new Predicate<Node<T>>() {
-                @Override
-                public boolean test(Node<T> t) {
-                    return !t.dependsOn.isEmpty();
-                }
-            }).findAny();
+            Optional<Node<T>> node = nodes.stream().filter(t -> !t.dependsOn.isEmpty()).findAny();
             if (node.isPresent()) {
-                throw new CircularDependencyDetectedException("Circular dependency detected between " + node.get().bean.getBeanClass() + " and " + node.get().dependsOn.stream()//
-                        .map(new Function<Node<T>, Class<?>>() {
-                            public Class<?> apply(Node<T> t) {
-                                return t.bean.getBeanClass();
-                            }
-                        })//
+                throw new CircularDependencyDetectedException("Circular dependency detected between " + node.get().type.getJavaClass() + " and " + node.get().dependsOn.stream()//
+                        .map(t -> t.type.getJavaClass())//
                         .collect(Collectors.toSet()));
             }
             return Lists.reverse(list);
@@ -158,16 +149,16 @@ class CdiExtension implements Extension {
     }
 
     private static class Node<T> {
-        private Bean<? extends T> bean;
-        private Set<Node<T>>      dependsOn = Sets.newHashSet();
+        private AnnotatedType<? extends T> type;
+        private Set<Node<T>>               dependsOn = Sets.newHashSet();
 
-        private Node(Bean<? extends T> bean) {
-            this.bean = bean;
+        private Node(AnnotatedType<? extends T> type) {
+            this.type = type;
         }
 
         @Override
         public int hashCode() {
-            return bean.getBeanClass().hashCode();
+            return type.getJavaClass().hashCode();
         }
 
         @Override
@@ -179,7 +170,7 @@ class CdiExtension implements Extension {
             if (getClass() != obj.getClass())
                 return false;
             Node<?> other = (Node<?>) obj;
-            return this.bean.getBeanClass().equals(other.bean.getBeanClass());
+            return this.type.getJavaClass().equals(other.type.getJavaClass());
         }
     }
 }
