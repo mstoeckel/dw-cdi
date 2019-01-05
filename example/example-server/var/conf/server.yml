@@ -2,23 +2,22 @@ cdi:
   jpa:
     persistenceUnitName: exampleUnit
     transactionType: JTA
-    jarFilePaths:
-      - build/classes/java/main
+#    jarFilePaths:
+#      - build/classes/java/main
     jtaDataSource:
-      driverClass: oracle.jdbc.OracleDriver
-      #driverClass: oracle.jdbc.xa.client.OracleXADataSource
-      #driverClass: com.arjuna.ats.jdbc.TransactionalDriver
-      user: SENTRY_UAM
-      password: njcf0TT1
-      url: jdbc:oracle:thin:@//dhstierupgrade.aspex.local:1521/odbtest1.aspex.local
-      validationQuery: select 1 from dual
+      driverClass: org.h2.Driver
+      user: sa
+      password: 
+      url: jdbc:h2:file:./var/data/h2db
+      validationQuery: select 1
     properties:
-      hibernate.session_factory_name: java:comp/sentryUamEMF
-      hibernate.dialect: org.hibernate.dialect.Oracle10gDialect
-      hibernate.hbm2ddl.auto: validate
+      hibernate.session_factory_name: java:comp/exampleEMF
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+      # possible values: validate, update, create, create-drop, none
+      hibernate.hbm2ddl.auto: create-drop
       hibernate.show_sql: false
       hibernate.format_sql: true
-      hibernate.default_schema: SENTRY_UAM
+      #hibernate.default_schema: 
       hibernate.temp.use_jdbc_metadata_defaults: false
       
 server:
