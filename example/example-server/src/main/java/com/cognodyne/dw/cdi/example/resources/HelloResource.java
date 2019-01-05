@@ -1,5 +1,7 @@
 package com.cognodyne.dw.cdi.example.resources;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.inject.spi.BeanManager;
@@ -14,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import com.cognodyne.dw.cdi.CdiConfigurable;
 import com.cognodyne.dw.cdi.annotation.Configured;
+import com.cognodyne.dw.example.api.model.User;
 import com.cognodyne.dw.example.api.service.HelloService;
 
 import io.dropwizard.setup.Environment;
@@ -38,7 +41,8 @@ public class HelloResource implements HelloService {
         logger.debug("em:{}", em);
         logger.debug("config:{}", config);
         logger.debug("env:{}", env);
-        return "Hello!" + this.manager;
+        List<User> users = this.em.createQuery("select u from User u", User.class).getResultList();
+        return "Hello! Found " + users.size() + " users. bm:" + this.manager;
     }
 
     @PostConstruct

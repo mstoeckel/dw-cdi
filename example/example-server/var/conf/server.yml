@@ -2,13 +2,13 @@ cdi:
   jpa:
     persistenceUnitName: exampleUnit
     transactionType: JTA
-#    jarFilePaths:
-#      - build/classes/java/main
+    jarFilePaths:
+      - ../example-api/build/classes/java/main
     jtaDataSource:
       driverClass: org.h2.Driver
       user: sa
       password: 
-      url: jdbc:h2:file:./var/data/h2db
+      url: jdbc:h2:file:./var/data/h2db;DB_CLOSE_DELAY=-1;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS example
       validationQuery: select 1
     properties:
       hibernate.session_factory_name: java:comp/exampleEMF
@@ -17,7 +17,7 @@ cdi:
       hibernate.hbm2ddl.auto: create-drop
       hibernate.show_sql: false
       hibernate.format_sql: true
-      #hibernate.default_schema: 
+      hibernate.default_schema: example
       hibernate.temp.use_jdbc_metadata_defaults: false
       
 server:

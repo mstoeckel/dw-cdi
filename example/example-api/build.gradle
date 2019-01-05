@@ -1,3 +1,4 @@
 dependencies {
     compile project(':cdi-bundle')
+    compile "org.jadira.usertype:usertype.core:$jadiraVersion"
 }

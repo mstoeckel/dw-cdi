@@ -1,5 +1,5 @@
 dependencies {
     compile project(':example:example-api')
-    //compile "com.oracle:ojdbc6:$oracleVersion"
     compile "com.h2database:h2:$h2databaseVersion"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:$jacksonDatabindHibernateVersion"
 }
