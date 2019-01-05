@@ -1,4 +1,4 @@
-package com.cognodyne.dw.cdi.jpa;
+package com.cognodyne.dw.cdi.config;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -22,7 +22,7 @@ import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cognodyne.dw.cdi.InvalidConfigurationException;
+import com.cognodyne.dw.cdi.exception.InvalidConfigurationException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.dropwizard.db.DataSourceFactory;

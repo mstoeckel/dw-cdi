@@ -14,11 +14,11 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cognodyne.dw.cdi.CdiConfigurable;
 import com.cognodyne.dw.cdi.annotation.Configured;
 import com.cognodyne.dw.example.api.model.User;
 import com.cognodyne.dw.example.api.service.HelloService;
 
+import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
 
 @Singleton
@@ -30,7 +30,7 @@ public class HelloResource implements HelloService {
     private EntityManager       em;
     @Inject
     @Configured
-    private CdiConfigurable     config;
+    private Configuration       config;
     @Inject
     @Configured
     private Environment         env;

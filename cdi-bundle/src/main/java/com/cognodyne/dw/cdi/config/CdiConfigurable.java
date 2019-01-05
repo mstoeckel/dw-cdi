@@ -1,4 +1,4 @@
-package com.cognodyne.dw.cdi;
+package com.cognodyne.dw.cdi.config;
 
 import java.util.Optional;
 

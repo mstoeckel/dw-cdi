@@ -21,6 +21,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cognodyne.dw.cdi.annotation.Startup;
+import com.cognodyne.dw.cdi.exception.CircularDependencyDetectedException;
+import com.cognodyne.dw.cdi.exception.UnsatisfiedDependencyException;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;

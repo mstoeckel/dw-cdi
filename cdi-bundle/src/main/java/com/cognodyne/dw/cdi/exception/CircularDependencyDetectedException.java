@@ -1,4 +1,4 @@
-package com.cognodyne.dw.cdi;
+package com.cognodyne.dw.cdi.exception;
 
 public class CircularDependencyDetectedException extends RuntimeException {
     private static final long serialVersionUID = -69752638910986949L;

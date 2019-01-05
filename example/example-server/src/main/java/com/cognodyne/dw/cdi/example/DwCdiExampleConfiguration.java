@@ -4,8 +4,8 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import com.cognodyne.dw.cdi.CdiConfigurable;
-import com.cognodyne.dw.cdi.CdiConfiguration;
+import com.cognodyne.dw.cdi.config.CdiConfigurable;
+import com.cognodyne.dw.cdi.config.CdiConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.dropwizard.Configuration;

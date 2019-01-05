@@ -1,4 +1,4 @@
-package com.cognodyne.dw.cdi;
+package com.cognodyne.dw.cdi.exception;
 
 public class InvalidConfigurationException extends Exception {
     private static final long serialVersionUID = -2335261703275478336L;

@@ -1,4 +1,4 @@
-package com.cognodyne.dw.cdi;
+package com.cognodyne.dw.cdi.config;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -10,7 +10,6 @@ import java.util.Set;
 
 import javax.validation.Valid;
 
-import com.cognodyne.dw.cdi.jpa.JpaConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.google.common.collect.ImmutableSet;
@@ -43,7 +42,7 @@ public class CdiConfiguration {
         return this.jpaConfiguartion;
     }
 
-    boolean include(Class<?> cls) {
+    public boolean include(Class<?> cls) {
         Path path = FileSystems.getDefault().getPath(cls.getName().replaceAll("\\.", "/"));
         if (this.excludes.stream().anyMatch(p -> p.matches(path))) {
             return this.includes.stream().anyMatch(p -> p.matches(path));

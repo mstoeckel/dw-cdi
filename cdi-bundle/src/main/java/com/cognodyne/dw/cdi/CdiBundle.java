@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 
 import com.codahale.metrics.health.HealthCheck;
 import com.cognodyne.dw.cdi.annotation.Configured;
+import com.cognodyne.dw.cdi.config.CdiConfigurable;
 import com.cognodyne.dw.cdi.service.JpaServiceProvider;
 import com.cognodyne.dw.cdi.service.JtaServiceProvider;
 import com.cognodyne.dw.cdi.service.ResourceInjectionServiceProvider;
@@ -34,6 +35,7 @@ import com.cognodyne.dw.cdi.service.SecurityServiceProvider;
 
 import io.dropwizard.Application;
 import io.dropwizard.ConfiguredBundle;
+import io.dropwizard.Configuration;
 import io.dropwizard.cli.Command;
 import io.dropwizard.cli.ConfiguredCommand;
 import io.dropwizard.lifecycle.Managed;
@@ -168,9 +170,9 @@ public class CdiBundle implements ConfiguredBundle<CdiConfigurable> {
 
     @Produces
     @Configured
-    public CdiConfigurable getConfiguration() {
+    public Configuration getConfiguration() {
         logger.debug("returning configuaration:{}", this.configuration);
-        return configuration;
+        return (Configuration) configuration;
     }
 
     @Produces

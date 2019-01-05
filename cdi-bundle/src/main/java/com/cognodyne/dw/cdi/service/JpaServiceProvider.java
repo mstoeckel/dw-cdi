@@ -20,11 +20,12 @@ import org.jboss.weld.injection.spi.ResourceReferenceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cognodyne.dw.cdi.CdiConfigurable;
-import com.cognodyne.dw.cdi.InvalidConfigurationException;
 import com.cognodyne.dw.cdi.annotation.Configured;
+import com.cognodyne.dw.cdi.config.CdiConfigurable;
+import com.cognodyne.dw.cdi.exception.InvalidConfigurationException;
 import com.google.common.collect.Maps;
 
+import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
 
 public class JpaServiceProvider implements JpaInjectionServices {
@@ -97,7 +98,7 @@ public class JpaServiceProvider implements JpaInjectionServices {
         try {
             EntityManagerFactory emf = emfs.get(name);
             if (emf == null) {
-                CdiConfigurable config = CDI.current().select(CdiConfigurable.class, new AnnotationLiteral<Configured>() {
+                CdiConfigurable config = (CdiConfigurable) CDI.current().select(Configuration.class, new AnnotationLiteral<Configured>() {
                 }).get();
                 Environment env = CDI.current().select(Environment.class, new AnnotationLiteral<Configured>() {
                 }).get();
