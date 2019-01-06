@@ -88,22 +88,26 @@ public class CdiBundle implements ConfiguredBundle<CdiConfigurable> {
         environment.getApplicationContext().addEventListener(Listener.using(this.bm));
         //register healthchecks
         this.extension.getAnnotatedTypes().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .filter(t -> HealthCheck.class.isAssignableFrom(t.getJavaClass()))//
                 .filter(t -> CdiUtil.isAnnotationPresent(t, Named.class))//
                 .filter(t -> shouldInclude(configuration, t))//
                 .forEach(t -> environment.healthChecks().register(CdiUtil.getAnnotation(t, Named.class).value(), (HealthCheck) CDI.current().select(t.getJavaClass()).get()));
         //register managed
         this.extension.getAnnotatedTypes().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .filter(t -> Managed.class.isAssignableFrom(t.getJavaClass()))//
                 .filter(t -> shouldInclude(configuration, t))//
                 .forEach(t -> environment.lifecycle().manage((Managed) CDI.current().select(t.getJavaClass()).get()));
         //register tasks
         this.extension.getAnnotatedTypes().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .filter(t -> Task.class.isAssignableFrom(t.getJavaClass()))//
                 .filter(t -> shouldInclude(configuration, t))//
                 .forEach(t -> environment.admin().addTask((Task) CDI.current().select(t.getJavaClass()).get()));
         //register dynamic features
         this.extension.getAnnotatedTypes().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .filter(t -> DynamicFeature.class.isAssignableFrom(t.getJavaClass()))//
                 .filter(t -> shouldInclude(configuration, t))//
                 .forEach(t -> environment.jersey().register(CDI.current().select(t.getJavaClass()).get()));
@@ -135,6 +139,7 @@ public class CdiBundle implements ConfiguredBundle<CdiConfigurable> {
                 });
         //register servlets
         this.extension.getAnnotatedTypes().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .filter(t -> Servlet.class.isAssignableFrom(t.getJavaClass()))//
                 .filter(t -> CdiUtil.isAnnotationPresent(t, WebServlet.class))//
                 .filter(t -> shouldInclude(configuration, t))//
@@ -156,12 +161,13 @@ public class CdiBundle implements ConfiguredBundle<CdiConfigurable> {
                 });
         //register jersey resources
         this.extension.getAnnotatedTypes().stream()//
-                .filter(t -> !t.getJavaClass().isInterface())
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .filter(t -> CdiUtil.isAnnotationPresent(t, Path.class))//
                 .filter(t -> this.shouldInclude(configuration, t))//
                 .forEach(t -> environment.jersey().register(t.getJavaClass()));
         // start startups
         this.extension.getStartups().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())//
                 .forEach(t -> CDI.current().select(t.getJavaClass()).get());
     }
 
