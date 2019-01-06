@@ -34,8 +34,8 @@ import com.cognodyne.dw.cdi.service.ResourceInjectionServiceProvider;
 import com.cognodyne.dw.cdi.service.SecurityServiceProvider;
 
 import io.dropwizard.Application;
-import io.dropwizard.ConfiguredBundle;
 import io.dropwizard.Configuration;
+import io.dropwizard.ConfiguredBundle;
 import io.dropwizard.cli.Command;
 import io.dropwizard.cli.ConfiguredCommand;
 import io.dropwizard.lifecycle.Managed;
@@ -156,6 +156,7 @@ public class CdiBundle implements ConfiguredBundle<CdiConfigurable> {
                 });
         //register jersey resources
         this.extension.getAnnotatedTypes().stream()//
+                .filter(t -> !t.getJavaClass().isInterface())
                 .filter(t -> CdiUtil.isAnnotationPresent(t, Path.class))//
                 .filter(t -> this.shouldInclude(configuration, t))//
                 .forEach(t -> environment.jersey().register(t.getJavaClass()));

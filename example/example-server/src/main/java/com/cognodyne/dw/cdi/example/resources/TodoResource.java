@@ -19,7 +19,7 @@ import com.cognodyne.dw.example.api.service.TodoService;
 
 @Singleton
 @Startup
-public class TodoResource implements TodoService {
+public class TodoResource extends BaseResource implements TodoService {
     private static final Logger logger = LoggerFactory.getLogger(TodoResource.class);
     private Server              h2WebServer;
     @PersistenceContext(unitName = "exampleUnit")

@@ -18,19 +18,15 @@ import com.cognodyne.dw.cdi.annotation.Configured;
 import com.cognodyne.dw.example.api.model.User;
 import com.cognodyne.dw.example.api.service.HelloService;
 
-import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
 
 @Singleton
-public class HelloResource implements HelloService {
+public class HelloResource extends BaseResource implements HelloService {
     private static final Logger logger = LoggerFactory.getLogger(HelloResource.class);
     @Inject
     private BeanManager         manager;
     @PersistenceContext(unitName = "exampleUnit")
     private EntityManager       em;
-    @Inject
-    @Configured
-    private Configuration       config;
     @Inject
     @Configured
     private Environment         env;
@@ -39,7 +35,7 @@ public class HelloResource implements HelloService {
     @Transactional
     public String sayHello() {
         logger.debug("em:{}", em);
-        logger.debug("config:{}", config);
+        logger.debug("config:{}", this.getDwCdiExampleConfiguration());
         logger.debug("env:{}", env);
         List<User> users = this.em.createQuery("select u from User u", User.class).getResultList();
         return "Hello! Found " + users.size() + " users. bm:" + this.manager;
