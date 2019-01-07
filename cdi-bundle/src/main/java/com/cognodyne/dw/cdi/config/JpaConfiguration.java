@@ -1,13 +1,20 @@
 package com.cognodyne.dw.cdi.config;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.persistence.SharedCacheMode;
 import javax.persistence.ValidationMode;
@@ -24,9 +31,11 @@ import org.slf4j.LoggerFactory;
 
 import com.cognodyne.dw.cdi.exception.InvalidConfigurationException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.collect.Lists;
 
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.setup.Environment;
+import jersey.repackaged.com.google.common.collect.ImmutableList;
 
 public class JpaConfiguration {
     private static final Logger            logger                  = LoggerFactory.getLogger(JpaConfiguration.class);
@@ -168,14 +177,7 @@ public class JpaConfiguration {
             @Override
             public List<URL> getJarFileUrls() {
                 return JpaConfiguration.this.getJarFilePaths().stream()//
-                        .map(path -> {
-                            try {
-                                return new File(path).toURI().toURL();
-                            } catch (MalformedURLException e) {
-                                logger.error("Unable to convert {} to URL", path, e);
-                                return null;
-                            }
-                        })//
+                        .flatMap(path -> PathUtil.toUrlStream(path))//
                         .filter(url -> url != null)//
                         .collect(Collectors.toList());
             }
@@ -235,5 +237,70 @@ public class JpaConfiguration {
                 return null;
             }
         };
+    }
+
+    private static class PathUtil {
+        public static Stream<URL> toUrlStream(String path) {
+            if (path.contains("?") || path.contains("*")) {
+                File file = new File(path);
+                if (file.isAbsolute()) {
+                    int index = findGlobBoundryIndex(path);
+                    return toUrlStream(Paths.get(path.substring(0, index)), path);
+                } else {
+                    return toUrlStream(Paths.get(""), path);
+                }
+            } else {
+                return ImmutableList.of(toUrl(new File(path))).stream();
+            }
+        }
+
+        private static int findGlobBoundryIndex(String path) {
+            int index = 0;
+            for (int i = 0; i < path.length(); i++) {
+                char c = path.charAt(i);
+                if (c == File.separatorChar) {
+                    index = i;
+                } else if (c == '?' || c == '*') {
+                    break;
+                }
+            }
+            return index;
+        }
+
+        private static Stream<URL> toUrlStream(Path root, String glob) {
+            List<URL> result = Lists.newArrayList();
+            PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:" + glob);
+            try {
+                Files.find(root, Integer.MAX_VALUE, (path, attrib) -> {
+                    boolean match = matcher.matches(path);
+                    return match;
+                }).forEach(p -> result.add(toUrl(p)));
+            } catch (IOException e) {
+                logger.error("Unable to find files from {} with glob {}", root, glob);
+            }
+            return result.stream();
+        }
+
+        private static URL toUrl(File file) {
+            try {
+                return file.toURI().toURL();
+            } catch (MalformedURLException e) {
+                logger.error("Unable to convert {} to URL", file);
+                return null;
+            }
+        }
+
+        private static URL toUrl(Path file) {
+            try {
+                return file.toUri().toURL();
+            } catch (MalformedURLException e) {
+                logger.error("Unable to convert {} to URL", file);
+                return null;
+            }
+        }
+    }
+
+    public static void main(String... args) {
+        PathUtil.toUrlStream("**/cdi-bundle-*.jar").forEach(u -> System.out.println(u));
     }
 }
