@@ -41,8 +41,8 @@ public class JpaConfiguration {
     private static final Logger            logger                  = LoggerFactory.getLogger(JpaConfiguration.class);
     @Valid
     @NotNull
-    @JsonProperty("persistenceUnitName")
-    private String                         persistenceUnitName;
+    @JsonProperty("name")
+    private String                         name;
     @Valid
     @NotNull
     @JsonProperty("transactionType")
@@ -91,8 +91,8 @@ public class JpaConfiguration {
     public JpaConfiguration() {
     }
 
-    public String getPersistenceUnitName() {
-        return persistenceUnitName;
+    public String getName() {
+        return name;
     }
 
     public PersistenceUnitTransactionType getTransactionType() {
@@ -146,7 +146,7 @@ public class JpaConfiguration {
         return new PersistenceUnitInfo() {
             @Override
             public String getPersistenceUnitName() {
-                return JpaConfiguration.this.getPersistenceUnitName();
+                return JpaConfiguration.this.getName();
             }
 
             @Override
@@ -161,12 +161,12 @@ public class JpaConfiguration {
 
             @Override
             public DataSource getJtaDataSource() {
-                return JpaConfiguration.this.getJtaDataSourceFactory().isPresent() ? JpaConfiguration.this.getJtaDataSourceFactory().get().build(environment.metrics(), "JTA Datasource for " + JpaConfiguration.this.getPersistenceUnitName()) : null;
+                return JpaConfiguration.this.getJtaDataSourceFactory().isPresent() ? JpaConfiguration.this.getJtaDataSourceFactory().get().build(environment.metrics(), "JTA Datasource for " + JpaConfiguration.this.getName()) : null;
             }
 
             @Override
             public DataSource getNonJtaDataSource() {
-                return JpaConfiguration.this.getNonJtaDataSourceFactory().isPresent() ? JpaConfiguration.this.getNonJtaDataSourceFactory().get().build(environment.metrics(), "Non-JTA Datasource for " + JpaConfiguration.this.getPersistenceUnitName()) : null;
+                return JpaConfiguration.this.getNonJtaDataSourceFactory().isPresent() ? JpaConfiguration.this.getNonJtaDataSourceFactory().get().build(environment.metrics(), "Non-JTA Datasource for " + JpaConfiguration.this.getName()) : null;
             }
 
             @Override

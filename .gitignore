@@ -6,5 +6,5 @@
 bin/
 build/
 example/example-server/var/log/
-example/example-server/var/data/*.db
+example/example-server/var/data/
 example/example-server/ObjectStore/

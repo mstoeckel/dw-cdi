@@ -1,24 +1,24 @@
 cdi:
-  jpa:
-    persistenceUnitName: exampleUnit
-    transactionType: JTA
-    jarFilePaths:
-      - ../example-api/build/classes/java/main
-    jtaDataSource:
-      driverClass: org.h2.Driver
-      user: sa
-      password: 
-      url: jdbc:h2:file:./var/data/h2db;DB_CLOSE_DELAY=-1;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS example
-      validationQuery: select 1
-    properties:
-      hibernate.session_factory_name: java:comp/exampleEMF
-      hibernate.dialect: org.hibernate.dialect.H2Dialect
-      # possible values: validate, update, create, create-drop, none
-      hibernate.hbm2ddl.auto: create-drop
-      hibernate.show_sql: false
-      hibernate.format_sql: true
-      hibernate.default_schema: example
-      hibernate.temp.use_jdbc_metadata_defaults: false
+  persistenceUnits:
+    - name: exampleUnit
+      transactionType: JTA
+      jarFilePaths:
+        - ../example-api/build/classes/java/main
+      jtaDataSource:
+        driverClass: org.h2.Driver
+        user: sa
+        password: 
+        url: jdbc:h2:file:./var/data/h2db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS example
+        validationQuery: select 1
+      properties:
+        hibernate.session_factory_name: java:comp/exampleEMF
+        hibernate.dialect: org.hibernate.dialect.H2Dialect
+        # possible values: validate, update, create, create-drop, none
+        hibernate.hbm2ddl.auto: create-drop
+        hibernate.show_sql: false
+        hibernate.format_sql: true
+        hibernate.default_schema: example
+        hibernate.temp.use_jdbc_metadata_defaults: false
       
 server:
   rootPath: /api/*
@@ -88,6 +88,7 @@ logging:
   level: INFO
   loggers:
     com.cognodyne: DEBUG
+    org.hibernate: INFO
   appenders:
     - type: console
     - type: file

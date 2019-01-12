@@ -10,6 +10,6 @@ subprojects {
 
     dependencies {
         compile "org.slf4j:slf4j-api:$slf4jVersion"
-        testCompile "org.junit.jupiter:junit-jupiter-api':$junitVersion"
+        testCompile "junit:junit:$junitVersion"
     }
 }

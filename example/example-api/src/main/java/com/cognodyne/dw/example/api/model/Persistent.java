@@ -36,7 +36,7 @@ public abstract class Persistent implements Serializable {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36)
+    @Column(name = "ID", length = 36)
     public String getId() {
         return id;
     }

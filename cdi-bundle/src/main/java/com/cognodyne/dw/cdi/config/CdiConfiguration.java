@@ -5,25 +5,25 @@ import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import javax.validation.Valid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 @JsonDeserialize(builder = CdiConfiguration.Builder.class)
 public class CdiConfiguration {
-    private final Set<PathMatcher>           includes;
-    private final Set<PathMatcher>           excludes;
-    private final Optional<JpaConfiguration> jpaConfiguartion;
+    private final Set<PathMatcher>       includes;
+    private final Set<PathMatcher>       excludes;
+    private final List<JpaConfiguration> jpaConfiguartions;
 
-    private CdiConfiguration(Set<PathMatcher> includes, Set<PathMatcher> excludes, Optional<JpaConfiguration> jpaConfiguartion) {
+    private CdiConfiguration(Set<PathMatcher> includes, Set<PathMatcher> excludes, List<JpaConfiguration> jpaConfiguartions) {
         this.includes = includes;
         this.excludes = excludes;
-        this.jpaConfiguartion = jpaConfiguartion;
+        this.jpaConfiguartions = ImmutableList.copyOf(jpaConfiguartions);
     }
 
     public static Builder builder() {
@@ -38,8 +38,8 @@ public class CdiConfiguration {
         return excludes;
     }
 
-    public Optional<JpaConfiguration> getJpaConfiguration() {
-        return this.jpaConfiguartion;
+    public List<JpaConfiguration> getJpaConfigurations() {
+        return this.jpaConfiguartions;
     }
 
     public boolean include(Class<?> cls) {
@@ -52,12 +52,12 @@ public class CdiConfiguration {
 
     public static final class Builder {
         @JsonProperty
-        private List<String>               includes = Collections.emptyList();
+        private List<String>           includes         = Collections.emptyList();
         @JsonProperty
-        private List<String>               excludes = Collections.emptyList();
+        private List<String>           excludes         = Collections.emptyList();
         @JsonProperty
         @Valid
-        private Optional<JpaConfiguration> jpa      = Optional.empty();
+        private List<JpaConfiguration> persistenceUnits = ImmutableList.of();
 
         private Builder() {
         }
@@ -67,7 +67,7 @@ public class CdiConfiguration {
             ImmutableSet.Builder<PathMatcher> excludesBuilder = ImmutableSet.builder();
             this.includes.stream().forEach(str -> includesBuilder.add(FileSystems.getDefault().getPathMatcher("glob:" + str)));
             this.excludes.stream().forEach(str -> excludesBuilder.add(FileSystems.getDefault().getPathMatcher("glob:" + str)));
-            return new CdiConfiguration(includesBuilder.build(), excludesBuilder.build(), this.jpa);
+            return new CdiConfiguration(includesBuilder.build(), excludesBuilder.build(), this.persistenceUnits);
         }
 
         public Builder includes(List<String> includes) {
@@ -84,8 +84,8 @@ public class CdiConfiguration {
             return this;
         }
 
-        public Builder jpa(JpaConfiguration jpa) {
-            this.jpa = Optional.ofNullable(jpa);
+        public Builder persistenceUnits(List<JpaConfiguration> persistenceUnits) {
+            this.persistenceUnits = persistenceUnits;
             return this;
         }
     }

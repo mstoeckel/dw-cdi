@@ -1,0 +1,53 @@
+cdi:
+  persistenceUnits:
+    - name: exampleUnit
+      transactionType: JTA
+      jarFilePaths:
+        - ../example-api/build/classes/java/main
+      jtaDataSource:
+        driverClass: org.h2.Driver
+        user: sa
+        password: 
+        url: jdbc:h2:file:./var/data/h2db-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS example
+        validationQuery: select 1
+      properties:
+        hibernate.session_factory_name: java:comp/exampleEMF
+        hibernate.dialect: org.hibernate.dialect.H2Dialect
+        # possible values: validate, update, create, create-drop, none
+        hibernate.hbm2ddl.auto: create-drop
+        hibernate.show_sql: false
+        hibernate.format_sql: true
+        hibernate.default_schema: example
+        hibernate.temp.use_jdbc_metadata_defaults: false
+      
+server:
+  rootPath: /api/*
+  applicationContextPath: /example
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminContextPath: /admin
+  adminConnectors:
+    - type: http
+      port: 8081
+  requestLog:
+    appenders:
+      - type: file
+        archive: true
+        archivedFileCount: 15
+        archivedLogFilenamePattern: var/log/example-request-%d.log.gz
+        currentLogFilename: var/log/example-request.log
+        threshold: INFO
+logging:
+  level: INFO
+  loggers:
+    com.cognodyne: DEBUG
+    org.hibernate: INFO
+  appenders:
+    - type: console
+    - type: file
+      archive: true
+      archivedFileCount: 50
+      archivedLogFilenamePattern: var/log/example-%d.log.gz
+      currentLogFilename: var/log/example.log
+      logFormat: "%-5p [%d{\"yyyy-MM-dd''T''HH:mm:ss,SSSXXX\",UTC}] %c: %m%n%rEx"
