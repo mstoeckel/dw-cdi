@@ -10,6 +10,8 @@ import org.jboss.weld.transaction.spi.TransactionServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.arjuna.ats.arjuna.common.arjPropertyManager;
+import com.arjuna.ats.arjuna.objectstore.StoreManager;
 import com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionManagerImple;
 import com.arjuna.ats.jta.common.JTAEnvironmentBean;
 import com.arjuna.ats.jta.common.jtaPropertyManager;
@@ -20,9 +22,10 @@ public class JtaServiceProvider implements TransactionServices {
     private volatile JTAEnvironmentBean jtaEnv;
 
     public JtaServiceProvider() {
-        jtaEnv = jtaPropertyManager.getJTAEnvironmentBean();
-        jtaEnv.setTransactionManagerClassName(TransactionManagerImple.class.getName());
         try {
+            arjPropertyManager.getObjectStoreEnvironmentBean().setObjectStoreDir("var/data/jta");
+            jtaEnv = jtaPropertyManager.getJTAEnvironmentBean();
+            jtaEnv.setTransactionManagerClassName(TransactionManagerImple.class.getName());
             JndiHelper.bind(jtaEnv.getUserTransactionJNDIContext(), jtaEnv.getUserTransaction());
             JndiHelper.bind("java:comp/UserTransaction", jtaEnv.getUserTransaction());
             JndiHelper.bind(jtaEnv.getTransactionManagerJNDIContext(), jtaEnv.getTransactionManager());
@@ -35,7 +38,7 @@ public class JtaServiceProvider implements TransactionServices {
 
     public void cleanup() {
         logger.debug("cleanup called");
-        // TODO Auto-generated method stub
+        StoreManager.shutdown();
     }
 
     @Override

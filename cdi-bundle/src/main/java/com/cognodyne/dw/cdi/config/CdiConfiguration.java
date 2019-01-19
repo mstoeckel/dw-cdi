@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -18,11 +19,13 @@ import com.google.common.collect.ImmutableSet;
 public class CdiConfiguration {
     private final Set<PathMatcher>       includes;
     private final Set<PathMatcher>       excludes;
+    private final String                 jtaObjectStoreDir;
     private final List<JpaConfiguration> jpaConfiguartions;
 
-    private CdiConfiguration(Set<PathMatcher> includes, Set<PathMatcher> excludes, List<JpaConfiguration> jpaConfiguartions) {
+    private CdiConfiguration(Set<PathMatcher> includes, Set<PathMatcher> excludes, String jtaObjectStoreDir, List<JpaConfiguration> jpaConfiguartions) {
         this.includes = includes;
         this.excludes = excludes;
+        this.jtaObjectStoreDir = jtaObjectStoreDir;
         this.jpaConfiguartions = ImmutableList.copyOf(jpaConfiguartions);
     }
 
@@ -36,6 +39,10 @@ public class CdiConfiguration {
 
     public Set<PathMatcher> getExcludes() {
         return excludes;
+    }
+
+    public String getJtaObjectStoreDir() {
+        return jtaObjectStoreDir;
     }
 
     public List<JpaConfiguration> getJpaConfigurations() {
@@ -52,12 +59,16 @@ public class CdiConfiguration {
 
     public static final class Builder {
         @JsonProperty
-        private List<String>           includes         = Collections.emptyList();
+        private List<String>           includes          = Collections.emptyList();
         @JsonProperty
-        private List<String>           excludes         = Collections.emptyList();
+        private List<String>           excludes          = Collections.emptyList();
         @JsonProperty
         @Valid
-        private List<JpaConfiguration> persistenceUnits = ImmutableList.of();
+        @NotNull
+        private String                 jtaObjectStoreDir = "var/data/jta";
+        @JsonProperty
+        @Valid
+        private List<JpaConfiguration> persistenceUnits  = ImmutableList.of();
 
         private Builder() {
         }
@@ -67,7 +78,7 @@ public class CdiConfiguration {
             ImmutableSet.Builder<PathMatcher> excludesBuilder = ImmutableSet.builder();
             this.includes.stream().forEach(str -> includesBuilder.add(FileSystems.getDefault().getPathMatcher("glob:" + str)));
             this.excludes.stream().forEach(str -> excludesBuilder.add(FileSystems.getDefault().getPathMatcher("glob:" + str)));
-            return new CdiConfiguration(includesBuilder.build(), excludesBuilder.build(), this.persistenceUnits);
+            return new CdiConfiguration(includesBuilder.build(), excludesBuilder.build(), this.jtaObjectStoreDir, this.persistenceUnits);
         }
 
         public Builder includes(List<String> includes) {
@@ -82,6 +93,10 @@ public class CdiConfiguration {
                 this.excludes = excludes;
             }
             return this;
+        }
+
+        public String getJtaObjectStoreDir() {
+            return jtaObjectStoreDir;
         }
 
         public Builder persistenceUnits(List<JpaConfiguration> persistenceUnits) {
