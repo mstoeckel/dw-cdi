@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
@@ -274,7 +275,7 @@ public class JpaConfiguration {
                 Files.find(root, Integer.MAX_VALUE, (path, attrib) -> {
                     boolean match = matcher.matches(path);
                     return match;
-                }).forEach(p -> result.add(toUrl(p)));
+                }, FileVisitOption.FOLLOW_LINKS).forEach(p -> result.add(toUrl(p)));
             } catch (IOException e) {
                 logger.error("Unable to find files from {} with glob {}", root, glob);
             }

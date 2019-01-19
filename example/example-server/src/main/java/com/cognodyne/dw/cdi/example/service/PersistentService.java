@@ -23,6 +23,10 @@ public abstract class PersistentService<T extends Persistent> {
     @Transactional
     public abstract Optional<T> find(String id);
 
+    public <C> Optional<C> find(Class<C> cls, String id) {
+        return Optional.ofNullable(this.em.find(cls, id));
+    }
+
     @Transactional
     public T create(T entity) {
         onPrePersist(entity);

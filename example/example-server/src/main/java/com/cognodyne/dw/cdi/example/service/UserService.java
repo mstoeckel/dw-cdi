@@ -12,7 +12,7 @@ import com.cognodyne.dw.example.api.model.User;
 public class UserService extends PersistentService<User> {
     @Transactional
     public Optional<User> find(String id) {
-        return Optional.ofNullable(this.em.find(User.class, id));
+        return this.find(User.class, id);
     }
 
     @Transactional
