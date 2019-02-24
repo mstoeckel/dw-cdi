@@ -93,12 +93,12 @@ public class JpaServiceProvider implements JpaInjectionServices {
     @Override
     public EntityManager resolvePersistenceContext(InjectionPoint ip) {
         String name = ip.getAnnotated().getAnnotation(PersistenceContext.class).unitName();
-        EntityManager em = this.emCache.get().get(name);
+        EntityManager em = null;//this.emCache.get().get(name);
         if (em == null) {
             EntityManagerFactory factory = this.getEmf(name);
             if (factory != null) {
                 em = factory.createEntityManager(SynchronizationType.SYNCHRONIZED);
-                this.emCache.get().put(name, em);
+                //this.emCache.get().put(name, em);
             }
         }
         return em;
